@@ -20,7 +20,7 @@ The modules listed here provison following resources:
  c. terraform plan
 
 
- 3. Before provisioning resources 
+ 3. For provisioning resources 
 
     terraform apply
 
