@@ -10,22 +10,22 @@ The modules listed here provison following resources:
 7. GCS bucket on host project to store remote state.
 8. Tested the setup using: https://cloud.google.com/memorystore/docs/cluster/connect-cluster-instance#connect_from_a_compute_engine_vm_using_redis_cli
     
- 1. Initialize Terraform with a local backend:
+A. Initialize Terraform with a local backend:
 
     terraform init
 
- 2. Before, provisioning resources, validate your terraform config and verify the resources being created by running below commands:
+B. Before, provisioning resources, validate your terraform config and verify the resources being created by running below commands:
 
  a. terraform fmt
  b. terraform validate
  c. terraform plan
 
 
- 3. For provisioning resources 
+ C. For provisioning resources 
 
     terraform apply
 
- 4. Migrate Terraform state to the remote Cloud Storage backend (run once):
+ D. Migrate Terraform state to the remote Cloud Storage backend (run once):
 
     terraform init -migrate-state
 
