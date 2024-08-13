@@ -8,7 +8,8 @@ The modules listed here provison following resources:
 5. Firewall rules on host project
 6. Service project to provision redis cluster on memorystore, vm instance (a redis client), redis endpoints.
 7. GCS bucket on host project to store remote state.
- 
+8. Tested the setup using: https://cloud.google.com/memorystore/docs/cluster/connect-cluster-instance#connect_from_a_compute_engine_vm_using_redis_cli
+    
  1. Initialize Terraform with a local backend:
 
     terraform init
