@@ -1,4 +1,4 @@
-project-id         = "saran##hg-######"
+project-id         = "s###an##hg-######"
 service-project-id = "bk####sh"
 region             = "us-central1"
 host-network       = "my-host-network"
