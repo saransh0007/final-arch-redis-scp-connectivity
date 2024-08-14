@@ -1,8 +1,8 @@
 #module "service-project" {
 # source = "git::https://github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/project"
 #billing_account = var.billing_account_id
-# billing_account = "003745-B32D41-4F1D6A"
-# name            = "bkailash"
+# billing_account = "003745-####41-4F1D6A"
+# name            = "b####sh"
 #prefix          = var.prefix
 #parent          = var.folder_id
 # services = [
