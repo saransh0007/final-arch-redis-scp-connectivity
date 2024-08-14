@@ -1,8 +1,8 @@
-project-id         = "saranshg-test"
-service-project-id = "bkailash"
+project-id         = "saran##hg-######"
+service-project-id = "bk####sh"
 region             = "us-central1"
 host-network       = "my-host-network"
-psc_config         = [{ subnetworks = ["projects/saranshg-test/regions/us-central1/subnetworks/subnet-1"], limit = 16 }]
+psc_config         = [{ subnetworks = ["projects/s###nsh###/regions/us-central1/subnetworks/subnet-1"], limit = 16 }]
 service_name       = "service-connection-policy"
 location           = "us-central1"
 service_class      = "gcp-memorystore-redis"
