@@ -36,11 +36,14 @@ module "redis_cluster" {
   name      = each.value.name
   project   = var.service-project-id
   region    = var.region
-  network   = ["projects/${var.host-project-id}/global/networks/${module.vpc-host[0].name}"]
+  #network   = ["projects/${var.host-project-id}/global/networks/${module.vpc-host[0].name}"]
+  network =   module.vpc-host[0].self_link
   node_type = "REDIS_STANDARD_SMALL"
 
   redis_configs = {
     maxmemory-policy = "volatile-ttl"
   }
-
+  depends_on = [
+     module.vpc-host[0].self_link
+  ]
 }
