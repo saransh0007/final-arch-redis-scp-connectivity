@@ -8,4 +8,5 @@ module "service-connection-policy" {
   service_class = var.service_class
   name          = var.service_name
   project_id    = var.host-project-id
+  depends_on =   [module.vpc-host]
 }
