@@ -1,4 +1,4 @@
-# Terraform Script for VM to Memorystore Redis Cluster Lab
+# Terraform Script to provision and test VM to Memorystore Redis Cluster PSC Connect!
 
 This Terraform script streamlines the setup of a lab environment where you can access a Memorystore Redis Cluster residing in a service project from a VM within the same service project. The setup leverages a Shared VPC in the host project and utilizes Service Connection Policies with Private Service Connect (PSC).
 
