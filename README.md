@@ -72,24 +72,28 @@ This Terraform script will create the following resources:
 
 **NOTE:** The `-c` switch is crucial for cluster support, preventing `MOVED` errors when accessing keys on different shards. 
 
+## Miscellaneous :
+
+1.There's a GCS bucket on host project to store remote state.
+  
+2. Have also tested the setup using: https://cloud.google.com/memorystore/docs/cluster/connect-cluster-instance#connect_from_a_compute_engine_vm_using_redis_cli
+  
+3. Logging is set locally and is being stored as  a local file, uploading here for reference, below method is used:
+   Logging : $ export TF_LOG=”DEBUG” or TRACE or ERROR
+
+   Set up log file using TF_LOG_PATH ,  export TF_LOG_PATH="/home/
+
+4. To migrate Terraform state to the remote Cloud Storage backend (run once):
+
+    terraform init -migrate-state
+
+
 ## Cleanup
 
 Run `terraform destroy` to delete all the created resources.
 
 **Important:** Ensure you understand the implications before running `terraform destroy` in a production environment.
 
-- GCS bucket on host project to store remote state.
-  
--  Tested the setup using: https://cloud.google.com/memorystore/docs/cluster/connect-cluster-instance#connect_from_a_compute_engine_vm_using_redis_cli
-  
-- Logging is set locally and is being stored as  a local file, uploading here for reference, below method is used:
-Logging : $ export TF_LOG=”DEBUG” or TRACE or ERROR
-
-Set up log file using TF_LOG_PATH ,  export TF_LOG_PATH="/home/
-
-- Migrate Terraform state to the remote Cloud Storage backend (run once):
-
-    terraform init -migrate-state
 
 
 
