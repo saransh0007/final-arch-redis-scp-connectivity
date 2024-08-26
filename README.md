@@ -2,6 +2,8 @@
 
 This Terraform script streamlines the setup of a lab environment where you can access a Memorystore Redis Cluster residing in a service project from a VM within the same service project. The setup leverages a Shared VPC in the host project and utilizes Service Connection Policies with Private Service Connect (PSC).
 
+<img width="1376" alt="Screenshot 2024-08-26 at 10 07 04 PM" src="https://github.com/user-attachments/assets/9495cf98-190b-4bf3-a0ee-2678e4ca3ba7">
+
 
 ## Supported Documentation
 
