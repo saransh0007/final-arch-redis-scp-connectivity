@@ -16,7 +16,7 @@ module "simple-vm-example" {
   name       = each.value.name
   network_interfaces = [{
 
-    network    = module.vpc-host[0].name
+    network    = "projects/${var.host-project-id}/global/networks/${module.vpc-host[0].name}"
     subnetwork = "projects/${var.host-project-id}/regions/${var.region}/subnetworks/${var.subnets[0].name}"
 
   }]

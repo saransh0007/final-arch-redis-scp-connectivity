@@ -29,6 +29,10 @@ module "cloud_router" {
         source_ip_ranges_to_nat = ["PRIMARY_IP_RANGE"]
 
       }
+
     ]
+
   }]
+
+  depends_on = [module.vpc-host]
 }

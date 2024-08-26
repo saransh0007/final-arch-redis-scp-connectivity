@@ -80,3 +80,8 @@ variable "count-num" {
   description = "defines number of vm instances/mrc/nat/subnets to be deployed."
 }
 
+variable "vpc_create" {
+  type        = bool
+  description = "defines whether or not to create a vpc"
+  default     = false
+}
