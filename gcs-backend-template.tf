@@ -32,6 +32,7 @@ resource "google_storage_bucket" "default" {
   versioning {
     enabled = true
   }
+
 }
 
 
@@ -43,7 +44,7 @@ resource "local_file" "default" {
   terraform {
     backend "gcs" {
       bucket = "${google_storage_bucket.default.name}"
-      force_destroy               = true
+
     }
   }
   EOT
