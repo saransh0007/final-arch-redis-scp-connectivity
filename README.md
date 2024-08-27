@@ -1,4 +1,4 @@
-# Terraform Script to provision and test VM to Memorystore Redis Cluster via Private Service Connect!
+# Terraform Script to provision and test VM to Memorystore Redis Cluster connectivity via Private Service Connect!
 
 This Terraform script streamlines the setup of a lab environment where you can access a Memorystore Redis Cluster residing in a service project from a VM within the same service project. The setup leverages a Shared VPC in the host project and utilizes Service Connection Policies with Private Service Connect (PSC).
 
@@ -96,6 +96,10 @@ This Terraform script will create the following resources:
 Run `terraform destroy` to delete all the created resources.
 
 **Important:** Ensure you understand the implications before running `terraform destroy` in a production environment.
+
+
+
+
 
 
 

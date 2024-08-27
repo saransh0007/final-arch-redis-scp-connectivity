@@ -1,20 +1,38 @@
+locals {
+  cloud-router-count = {
+
+    for i in range(var.count-num) :
+    "cloud-router${i + 1}" => {
+
+      name = "cloud-router${i + 1}"
+    }
+
+  }
+
+}
+
 module "cloud_router" {
-  source  = "terraform-google-modules/cloud-router/google"
-  version = "~> 6.0"
-  name    = var.cloud-router
-  project = var.project-id
-  network = var.host-network
-  region  = var.region
+  for_each = local.cloud-router-count
+  source   = "terraform-google-modules/cloud-router/google"
+  version  = "~> 6.0"
+  name     = each.key
+  project  = var.host-project-id
+  network  = module.vpc-host[0].name
+  region   = var.region
 
   nats = [{
     name                               = "my-nat-gateway"
     source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
     subnetworks = [
       {
-        name                    = "projects/${var.project-id}/regions/${var.region}/subnetworks/${var.my_subnets[0].name}"
+        name                    = "projects/${var.host-project-id}/regions/${var.region}/subnetworks/${var.subnets[0].name}"
         source_ip_ranges_to_nat = ["PRIMARY_IP_RANGE"]
-        #secondary_ip_range_names = module.vpc.subnets["us-central1/production"].secondary_ip_range[*].range_name
+
       }
+
     ]
+
   }]
+
+  depends_on = [module.vpc-host]
 }

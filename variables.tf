@@ -1,4 +1,4 @@
-variable "project-id" {
+variable "host-project-id" {
   description = "host project being used for sharing vpc."
   type        = string
 }
@@ -7,6 +7,7 @@ variable "service-project-id" {
   description = "Project to be used for resources deployment in gcp."
   type        = string
 }
+
 
 variable "redis-cluster" {
   description = "redis cluster to be deployed."
@@ -52,7 +53,7 @@ variable "service_class" {
   description = "Service class of the policy (e.g., 'gcp-memorystore-redis')"
 }
 
-variable "my_subnets" {
+variable "subnets" {
 
   type = list(object({
     ip_cidr_range = string
@@ -72,4 +73,15 @@ variable "cloud-router" {
 variable "vm_name" {
   type        = string
   description = "Name of the vm instance which connects to redis cluster"
+}
+
+variable "count-num" {
+  type        = number
+  description = "defines number of vm instances/mrc/nat/subnets to be deployed."
+}
+
+variable "vpc_create" {
+  type        = bool
+  description = "defines whether or not to create a vpc"
+  default     = false
 }

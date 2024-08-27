@@ -1,16 +1,11 @@
 output "host-network_selflink" {
-  value       = module.vpc-host.self_link
+  value       = module.vpc-host[0].self_link
   description = "self link of the host network/vpc created"
 }
 
 output "scp-name" {
   value       = module.service-connection-policy.id
-  description = "name os the created service connection policy"
-}
-
-output "redis-cluster-endpoints" {
-  value       = module.redis_cluster.discovery_endpoints
-  description = "name os the created service connection policy"
+  description = "name of the created service connection policy"
 }
 
 output "firewall-rules" {
@@ -18,6 +13,3 @@ output "firewall-rules" {
 
 }
 
-output "vm-name" {
-  value = module.simple-vm-example.id
-}
